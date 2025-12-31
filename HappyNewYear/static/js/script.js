@@ -2291,8 +2291,12 @@ function setLoadingStatus(status) {
 if (IS_HEADER) {
 	init();
 } else {
+	// 1. 获取当前年份
+	const currentYear = new Date().getFullYear();
+	// 2. 计算目标年份（比如当前年份+1）
+	const targetYear = currentYear + 1;
 	// Allow status to render, then preload assets and start app.
-	setLoadingStatus('献给2023的星辰大海');
+	setLoadingStatus(`献给${targetYear}的星辰大海`);
 	setTimeout(() => {
 		soundManager.preload()
 		.then(
